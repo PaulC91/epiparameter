@@ -604,6 +604,12 @@ print.multi_epidist <- function(x, ...) {
               FUN.VALUE = logical(1)
             )
           )
+        ),
+        sprintf(
+          "\n  Diseases available:\n  %s",
+          paste(sort(unique(
+            vapply(x, function(y) y$disease, FUN.VALUE = character(1))
+          )), collapse = "\n  ")
         )
       )
     )
